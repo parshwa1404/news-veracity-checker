@@ -2,10 +2,11 @@ import streamlit as st
 from transformers import pipeline
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
-import os
 from huggingface_hub import login
-hf_token = os.getenv("HF_TOKEN")
-login(hf_token)
+
+hf_token = st.secrets.get("HF_TOKEN")
+if hf_token:
+    login(hf_token)
 
 
 st.set_page_config(page_title="📰 News Veracity Checker", layout="wide")
