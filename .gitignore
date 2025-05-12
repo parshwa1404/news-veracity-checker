@@ -1,0 +1,12 @@
+env/
+venv/
+news_env/
+
+__pycache__/
+*.pyc
+
+secrets.toml
+.env
+
+.DS_Store
+Thumbs.db
