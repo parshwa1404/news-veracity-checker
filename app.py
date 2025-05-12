@@ -1,14 +1,7 @@
 import streamlit as st
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
-
-model_id = "tiiuae/falcon-rw-1b"
-
-tokenizer = AutoTokenizer.from_pretrained(model_id)
-model = AutoModelForCausalLM.from_pretrained(model_id)
-
+from transformers import pipeline
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
-from huggingface_hub import login
 
 st.set_page_config(page_title="📰 News Veracity Checker", layout="wide")
 
@@ -16,7 +9,6 @@ st.set_page_config(page_title="📰 News Veracity Checker", layout="wide")
 def load_models():
     veracity_model = pipeline('text-classification', model='jy46604790/Fake-News-Bert-Detect')
     summarizer = pipeline('summarization', model='facebook/bart-large-cnn')
-    explainer = pipeline('text-generation', model='model', max_new_tokens=100)
     return veracity_model, summarizer, explainer
 
 veracity_model, summarizer, explainer = load_models()
@@ -25,14 +17,6 @@ veracity_model, summarizer, explainer = load_models()
 def get_summary(text):
     summary = summarizer(text, max_length=120, min_length=30, do_sample=False)
     return summary[0]['summary_text']
-
-def generate_explanation(text, veracity_label):
-    prompt = (
-        f"You are a news analyst. Given this news:\n\n{text}\n\n"
-        f"Explain why this news is {veracity_label.lower()}, and rewrite it if false:\nExplanation:"
-    )
-    response = explainer(prompt)[0]['generated_text']
-    return response
 
 def plot_wordcloud(text):
     wc = WordCloud(width=800, height=400, background_color='white').generate(text)
@@ -69,10 +53,5 @@ if st.button("🚀 Analyze"):
         summary = get_summary(input_text)
         st.markdown("### 📃 **Summary:**")
         st.info(summary)
-
-        #explanation
-        explanation = generate_explanation(input_text, label)
-        st.markdown("### 🤖 **AI Explanation:**")
-        st.write(explanation)
 
         plot_wordcloud(input_text)
