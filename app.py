@@ -4,18 +4,13 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from huggingface_hub import login
 
-hf_token = st.secrets.get("HF_TOKEN")
-if hf_token:
-    login(hf_token)
-
-
 st.set_page_config(page_title="📰 News Veracity Checker", layout="wide")
 
 @st.cache_resource
 def load_models():
     veracity_model = pipeline('text-classification', model='jy46604790/Fake-News-Bert-Detect')
     summarizer = pipeline('summarization', model='facebook/bart-large-cnn')
-    explainer = pipeline('text-generation', model='google/gemma-2b-it', max_new_tokens=200)
+    explainer = pipeline('text-generation', model='tiiuae/falcon-1b', max_new_tokens=100)
     return veracity_model, summarizer, explainer
 
 veracity_model, summarizer, explainer = load_models()

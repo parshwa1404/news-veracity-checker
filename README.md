@@ -18,7 +18,7 @@ That’s why I built this project: an **News Veracity Checker Using AI**. This t
 
 - ✅ **Veracity Score** – Classifies news as true or false using a BERT-based fake news detector
 - 📃 **Article Summarizer** – Provides a concise summary of the content using Facebook’s BART model
-- 🤖 **AI Explanation** – Uses Google’s Gemma-2B-Instruct LLM to generate fact-based rationales and corrections
+- 🤖 **AI Explanation** – Uses Falcon-1B, an open-source lightweight language model, to generate fact-based rationales and corrected versions of misleading news
 - ☁️ **Word Cloud Visualization** – Visual insight into the most frequent keywords
 - 🧠 **All models are run locally using Hugging Face Transformers**
 
