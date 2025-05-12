@@ -2,9 +2,6 @@ import streamlit as st
 from transformers import pipeline
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
-import nltk
-nltk.download('stopwords')
-
 import os
 from huggingface_hub import login
 hf_token = os.getenv("HF_TOKEN")
