@@ -9,9 +9,9 @@ st.set_page_config(page_title="📰 News Veracity Checker", layout="wide")
 def load_models():
     veracity_model = pipeline('text-classification', model='jy46604790/Fake-News-Bert-Detect')
     summarizer = pipeline('summarization', model='facebook/bart-large-cnn')
-    return veracity_model, summarizer, explainer
+    return veracity_model, summarizer
 
-veracity_model, summarizer, explainer = load_models()
+veracity_model, summarizer = load_models()
 
 
 def get_summary(text):
