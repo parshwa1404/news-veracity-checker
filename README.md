@@ -1,3 +1,11 @@
+[![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://news-veracity-checker-parshwa-nandu.streamlit.app/)
+
+🔗 **Live Demo**: [Click here to try the app](https://news-veracity-checker-parshwa-nandu.streamlit.app/)
+
+> Classify news as true or false using AI, generate summaries and factual explanations.
+
+---
+
 # 📰 News Veracity Checker
 
 With the explosive growth of social media, the spread of **fake news** has become a global crisis. According to the MIT Media Lab, **false information spreads six times faster** than true news on platforms like Twitter. Studies also show that nearly **64% of adults have been exposed to fake news online**, often without even realizing it.
