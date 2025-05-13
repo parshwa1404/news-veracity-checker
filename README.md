@@ -1,10 +1,4 @@
-[![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://news-veracity-checker-parshwa-nandu.streamlit.app/)
-
-🔗 **Live Demo**: [Click here to try the app](https://news-veracity-checker-parshwa-nandu.streamlit.app/)
-
-> Classify news as true or false using AI, generate summaries and factual explanations.
-
----
+🔗 **Live Demo**: [Click here to try the app](https://huggingface.co/spaces/parshwa1404/news-veracity-checker)
 
 # 📰 News Veracity Checker
 
@@ -18,7 +12,7 @@ That’s why I built this project: an **News Veracity Checker Using AI**. This t
 
 - ✅ **Veracity Score** – Classifies news as true or false using a BERT-based fake news detector
 - 📃 **Article Summarizer** – Provides a concise summary of the content using Facebook’s BART model
-- 🤖 **AI Explanation** – Uses Falcon-1B, an open-source lightweight language model, to generate fact-based rationales and corrected versions of misleading news
+- 🤖 **AI Explanation** – Uses Google’s Gemma-2B-Instruct LLM to generate fact-based rationales and corrections
 - ☁️ **Word Cloud Visualization** – Visual insight into the most frequent keywords
 - 🧠 **All models are run locally using Hugging Face Transformers**
 
@@ -34,3 +28,29 @@ That’s why I built this project: an **News Veracity Checker Using AI**. This t
   - `jy46604790/Fake-News-Bert-Detect` – for veracity classification
   - `facebook/bart-large-cnn` – for summarizing long news texts
   - `google/gemma-2b-it` – for AI-generated factual explanation
+
+---
+
+## 🚀 Live Demo
+
+- You can try out the News Veracity Checker directly on Hugging Face Spaces:
+👉 [Try it live here](https://huggingface.co/spaces/parshwa1404/news-veracity-checker)
+
+---
+
+### Live Demo Screenshot:
+
+![Demo Screenshot](images/live-demo.png)
+
+---
+
+## 📝 How it Works
+
+1. Input: Paste a news headline or article in the text box.
+
+2. Processing: The system classifies the content using BERT, summarizes it using BART, and generates an AI-powered explanation using Gemma-2B.
+
+3. Output:
+  - Veracity Score: True or False classification of the article with a confidence score.
+  - Summary: A concise version of the article.
+  - Explanation: A detailed rationale explaining why the news is classified as true or false.
